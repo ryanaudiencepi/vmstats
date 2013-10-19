@@ -6,6 +6,7 @@
 -export([start/2, stop/1]).
 
 start(normal, []) -> % single node support. node ID in the key.
+    application:start(statsderl), 
     vmstats_sup:start_link("vmstats").
 
 stop(_) ->
